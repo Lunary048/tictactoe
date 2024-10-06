@@ -1,0 +1,46 @@
+<html>
+    <center>
+        <h1> Tic Tac Toe </h1>
+
+    <h3>
+        <font color="Black">
+            <font face="Times New Roman"> 
+               By Flo
+            </font>
+        </font>
+    </h3>
+
+
+    <p align="left"><div id="timer">Time left: 60 seconds</div></p>
+  
+    
+
+
+<table>
+<tr>
+    <td><img src="img/0.png" style="width:100px;height:100px;" id="board00" onclick="boardClick(0,0);"></td>
+    <td><img src="img/0.png" style="width:100px;height:100px;" id="board01" onclick="boardClick(0,1);"></td>
+    <td><img src="img/0.png" style="width:100px;height:100px;" id="board02" onclick="boardClick(0,2);"></td>
+
+<tr>
+    <td><img src="img/0.png" style="width:100px;height:100px;" id="board10" onclick="boardClick(1,0);"></td>
+    <td><img src="img/0.png" style="width:100px;height:100px;" id="board11" onclick="boardClick(1,1);"></td>
+    <td><img src="img/0.png" style="width:100px;height:100px;" id="board12" onclick="boardClick(1,2);"></td>
+</tr>
+<tr>
+    <td><img src="img/0.png" style="width:100px;height:100px;" id="board20" onclick="boardClick(2,0);"></td>
+    <td><img src="img/0.png" style="width:100px;height:100px;" id="board21" onclick="boardClick(2,1);"></td>
+    <td><img src="img/0.png" style="width:100px;height:100px;" id="board22" onclick="boardClick(2,2);"></td>
+</tr>
+</table>
+
+<h2><div  id="playerTurn"></div></h2>
+
+<button onclick="startButton();">Start</button>
+<button onclick="resetGame();">Reset Game</button>
+
+<script src="ttt.js"></script>
+</center>
+
+
+</html>
