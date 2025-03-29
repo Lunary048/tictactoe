@@ -1,0 +1,67 @@
+
+body {
+    background-image: url("img/background.jpg");
+    background-size: cover;
+    background-position: center;
+    font-family: "Jersey 10";
+    font-size: 30px;
+    color: White;
+
+
+}
+
+table {
+    margin-top: -30px;
+}
+
+p {
+    margin-top: -30px;
+}
+.title {
+    align-items: center;
+    font-size: 100px;
+}
+
+.title-icon {
+    height: 300px;
+    width: auto;
+    margin-bottom: 3px;
+
+}
+
+.by-icon {
+    align-items: center;
+    height:50px;
+    width: auto;
+    display: block;
+    margin-top: -150px;
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+ 
+
+}
+button:hover  {
+    transform: scale(1.1); 
+    opacity: 0.8; 
+}
+
+.start-icon {
+    height: 50px;
+    width: auto;
+    margin-top: -20px;
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.reset-icon {
+    height: 50px;
+    width: auto;
+    margin-top:-20px;
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+

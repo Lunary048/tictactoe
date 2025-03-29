@@ -1,12 +1,13 @@
 
 
 let board = [
-    [0, 0, 0],
-    [0, 0, 0],
-    [0, 0, 0]
+    ["null", "null", "null"],
+    ["null", "null", "null"],
+    ["null", "null", "null"]
 ];
 
 let playerTurn = 1;
+
 
 
 function startButton(){
@@ -40,21 +41,28 @@ function startButton(){
 
 // document.getElementById("board10").src = "img/player2.png";
 
+//function changeImage(row, col, player) {
+ //   let imgSrc = "img/" + player + ".png";
+  //  let imgId = "board" + row + col;
+   // document.getElementById(imgId).src = imgSrc;
+//}
+
 function changeImage(row, col, player) {
-    let imgSrc = "img/" + player + ".png";
     let imgId = "board" + row + col;
+    let imgSrc = player === "null" ? "img/null.png" : "img/" + player + ".png";
     document.getElementById(imgId).src = imgSrc;
 }
 
 // changeImage(0,0,2);
 // changeImage(1,1,1);
 // changeImage(2,2,1);
+
 let errorCounter = 0;
 let counter = ["Select another cell", "SELECT ANOTHER CELL", "ANOTHER CELL!!!",
     "Now don't be dumb..", "Don't be dumb.. SELECT ANOTHER CELL!!!", "Dummy", "Lalalalala"];
 
 function boardClick(row, col) {
-    if (board[row][col] !== 0) {
+    if (board[row][col] !== "null") {
         document.getElementById("playerTurn").innerHTML = counter[errorCounter];
         if (errorCounter < counter.length-1) {
             errorCounter++;
@@ -65,6 +73,7 @@ function boardClick(row, col) {
 
     }
 
+ 
     board[row][col] = playerTurn;
 
     let winner = checkWinner();
@@ -78,9 +87,12 @@ function boardClick(row, col) {
     //check winner
     if (winner != 0) {
         document.getElementById("playerTurn").innerHTML = "Congratulation! Player " + winner + " is the winner!";
+        
     } 
 
 }
+
+
 
 function changePlayer() {
     if (playerTurn == 1) {
@@ -109,7 +121,7 @@ function checkWinner() {
     // check row
     for (let row = 0; row < 3; row++) {
         if (board[row][0] == board[row][1] && board[row][1] == board[row][2]) {
-            if (board[row][0] != 0) {
+            if (board[row][0] != "null") {
                 return board[row][0];
             }
         }
@@ -117,32 +129,34 @@ function checkWinner() {
     // check col
     for (let col = 0; col < 3; col++) {
         if (board[0][col] == board[1][col] && board[1][col] == board[2][col]) {
-            if (board[0][col] != 0) {
+            if (board[0][col] != "null") {
                 return board[0][col];
             }
         }
     }
     // check diagonal
     if (board[0][0] == board[1][1] && board[1][1] == board[2][2]) {
-        if (board[0][0] != 0) {
+        if (board[0][0] != "null") {
             return board[0][0];
         }
     }
     if (board[0][2] == board[1][1] && board[1][1] == board[2][0]) {
-        if (board[0][2] != 0) {
+        if (board[0][2] != "null") {
             return board[0][2];
         }
     }
     return 0;
 }
 
+
 function resetGame() {
     board = [
-        [0, 0, 0],
-        [0, 0, 0],
-        [0, 0, 0],
+        ["null", "null", "null"],
+        ["null", "null", "null"],
+        ["null", "null", "null"],
     ];
     playerTurn = 1;
+ 
     updateBoardImage();
 }
 
